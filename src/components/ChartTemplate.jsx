@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, makeStyles, Typography } from "@material-ui/core";
+import { Paper, makeStyles, Typography, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,18 +14,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(1),
   },
 }));
 
-export default function ChartTemplate({ children, title }) {
+export default function ChartTemplate({ children, title, subtitle }) {
   const classes = useStyles();
 
   return (
     <Paper className={classes.root}>
-      <Typography component="h3" variant="h5" className={classes.title}>
-        {title}
-      </Typography>
+      <Box pb={3}>
+        <Typography component="h3" variant="h5" className={classes.title}>
+          {title}
+        </Typography>
+        <Typography color="textSecondary">{subtitle}</Typography>
+      </Box>
       {children}
     </Paper>
   );

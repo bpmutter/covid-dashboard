@@ -13,7 +13,10 @@ export default function UsCountyData() {
   if (error) return <Error />;
 
   return (
-    <ChartTemplate title="US County Data">
+    <ChartTemplate
+      title="US County Data"
+      subtitle="US counties with most COVID cases"
+    >
       {loading ? (
         <Box width={width} height={height}>
           <CircularProgress />
@@ -34,7 +37,7 @@ function Chart({ data }) {
       margin={{ top: 15, right: 30, left: 20, bottom: 15 }}
     >
       <XAxis dataKey="county" height={80}>
-        <Label position="insideBottom" offset={15} fill="white" fontSize="150%">
+        <Label position="insideBottom" offset={20} fill="white" fontSize="150%">
           Counties
         </Label>
       </XAxis>
