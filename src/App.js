@@ -34,7 +34,6 @@ const authLink = setContext(async (_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  uri: "https://realm.mongodb.com/api/client/v2.0/app/covid-19-qppza/graphql",
   cache: new InMemoryCache(),
   link: authLink.concat(httpLink),
 });
